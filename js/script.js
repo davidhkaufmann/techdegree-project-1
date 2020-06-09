@@ -65,6 +65,7 @@ printQuote function
 */
 
 function printQuote() {
+	randomColor();
 	var quoteDetails = getRandomQuote();
 	var html = '';
 	html = '<p class="quote">' + quoteDetails.quote + '</p>';
@@ -98,7 +99,6 @@ document.getElementById('load-quote').addEventListener("click", printQuote, fals
 document.getElementById('load-quote').addEventListener("click", randomColor, false);
 
 
-// Set interval method that refreshes the quote and changes the background color every 10 seconds
+// Set interval method that refreshes the quote every 10 seconds
 
 setInterval(printQuote, 10000);
-setInterval(randomColor, 10000);
