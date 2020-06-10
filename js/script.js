@@ -7,6 +7,7 @@ project 1 - A Random Quote Generator
 This is the quotes array. Each quote is listed as an object with a quote, 
 source, citation, year, and rating property
 */
+
 var quotes = [
 	{quote: "What is this? A center for ants?", source: "Derek Zoolander", citation: "Zoolander", year: 2001, rating: "B"},
 	{quote: "Life moves pretty fast. If you don’t stop and look around once in a while, you could miss it.", source: "Ferris Bueller", citation: "Ferris Bueller's Day Off", year: 1986, rating: "A"},
@@ -18,29 +19,19 @@ var quotes = [
 	{quote: "I’m kind of a big deal.", source: "Ron Burgundy", citation: "Anchorman", year: 2004, rating: "B+"},
 ];
 
-
-//Defining the variables red, green, blue, and rgbColor for the randomColor function
-
-var red;
-var green;
-var blue;
-var rgbColor;
-
-
 /*
 randomColor function
-	1. Assign the red, green, and blue variables a number value from 0 to 255
+	1. Define and assign the red, green, and blue variables a number value from 0 to 255
 	2. Define the rgbColor using the red, green, and blue variables
 */
 
 function randomColor() {
-	red = Math.floor(Math.random() * 256);
-	green = Math.floor(Math.random() * 256);
-	blue = Math.floor(Math.random() * 256);
-	rgbColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+	var red = Math.floor(Math.random() * 256);
+	var green = Math.floor(Math.random() * 256);
+	var blue = Math.floor(Math.random() * 256);
+	var rgbColor = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
 	document.body.style.background = rgbColor;
 }
-
 
 /*
 getRandomQuote function
@@ -52,7 +43,6 @@ function getRandomQuote() {
 	var randNum = Math.floor(Math.random() * quotes.length);
 	return quotes[randNum];
 }
-
 
 /*
 printQuote function
@@ -83,22 +73,17 @@ function printQuote() {
 	document.getElementById('quote-box').innerHTML = html;
 }
 
-
 //Calling the printQuote function
-
 printQuote();
 
 
 //Click event listener to display a new quote for the print quote button
-
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
 
 //Click event listener which changes the background color with each new quote for the print quote button
-
 document.getElementById('load-quote').addEventListener("click", randomColor, false);
 
 
 // Set interval method that refreshes the quote every 10 seconds
-
 setInterval(printQuote, 10000);
