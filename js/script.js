@@ -76,14 +76,11 @@ function printQuote() {
 //Calling the printQuote function
 printQuote();
 
-
 //Click event listener to display a new quote for the print quote button
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-
 //Click event listener which changes the background color with each new quote for the print quote button
 document.getElementById('load-quote').addEventListener("click", randomColor, false);
-
 
 // Set interval method that refreshes the quote every 10 seconds
 setInterval(printQuote, 10000);
